@@ -1,0 +1,15 @@
+{
+    "name": "prisonersDilemma",
+    "type": "project",
+        "keywrods": [ "prisoner", "tit-for-tat", "strtegy", "game", "Axelrod" ], 
+    "description": "PHP implementation of `Prisoner's dilemma` game",
+    "autoload": {
+        "psr-0": {
+            "PrisonersDilemma": "src/"
+        }
+    },
+    "require": {
+        "php": ">=5.4.19",
+        "symfony/console": "2.6.*"
+    }
+}
