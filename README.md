@@ -1,17 +1,19 @@
 # "Iterated Prisoners Dilemma" game emulator
 
-To run the game, call (you need ([composer](https://getcomposer.org) PHP package manager first)
+To run the game, call (you need [composer](https://getcomposer.org) PHP package manager first)
 
 ```
 composer install
 php bin/game.php
 ```
 
+It will show which agents are participating (along with short description), competition flow and final results.
+
 ## What is this?
 
-Prisoner's dilemma is iconic game theory problem, where Paretto-optimality and Nash equilibrium are mutually exclusive.
+"Prisoner's dilemma" is iconic game theory problem, where Paretto-optimality and Nash equilibrium are mutually exclusive.
 
-Iterated prisoner's dilemma is a well-known extension of this problem, where game agents play against each other for several iterations in a row. This setting allows for more complex strategies (also known as agents) to be built. Unlike single-iteration version it generally favors conditional cooperative strategies, as shown by tournament hosted by Robert Axelrod. The conventional wisdon is that the solution for the problem is "Tit for tat" strategy. It is characterized as starting on cooperation and repeating opponent's last move ever after.
+"Iterated prisoner's dilemma" is a well-known extension of this problem, where game agents play against each other for several iterations in a row. This setting allows for more complex strategies (also known as agents) to be built. Unlike single-iteration version it generally favors conditional cooperative strategies, as shown by tournament hosted by Robert Axelrod. The conventional wisdom is that the solution for the problem is "Tit for tat" strategy. It is characterized as starting on cooperation and repeating opponent's last move ever after.
 
 Here I added one further step, namely population dynamics. Initially population is evenly split between "contestant" strategies. On each round each population member plays iterated version against each other, earning payoff depending on his actions and opponent's actions. When round is finished, new population is generated and the shares of agent depend on how much payoff did this agent gather on previous round.
 
@@ -27,6 +29,7 @@ Parameters are specified as constants of class `PrisonersDilemma\Game` (src\Pris
 
 Following parameters are available:
 
+- Number of rounds (*this is the only parameter which should be edited in file bin/game.php*)
 - Game length (by default 100 iterations)
 - Action payoffs (by default 3/3 for mutual cooperation, 5/0 for one-side cooperation and 1/1 for mutual defection)
 - Turn error rate (by default in 5% cases strategy makes mistake and do opposite to what it intends to do)
